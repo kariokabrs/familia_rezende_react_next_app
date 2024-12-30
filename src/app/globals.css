@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0b0101;
     --foreground: #ededed;
   }
 }
@@ -18,4 +18,70 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilo global do menu de navegação */
+.main-nav {
+  background-color: #09000043; /* Usando !important para garantir que o estilo seja aplicado */
+  border-bottom: 1px solid #e5e7eb !important;
+  position: fixed !important;
+  top: 0 !important;
+  width: 100% !important;
+  z-index: 10 !important;
+  padding: 0.5rem 0 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Contêiner principal dentro do menu */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 95%; /* Ocupa 95% da largura da tela */
+  margin: 0 auto; /* Centraliza o conteúdo */
+  padding: 0; /* Sem espaçamento interno */
+}
+
+/* Logo da navegação */
+.nav-logo {
+  font-size: 1.5rem; /* Tamanho do texto */
+  font-weight: bold; /* Texto em negrito */
+  color: #eff0f3; /* Azul padrão */
+  text-decoration: none; /* Remove o sublinhado */
+  transition: color 0.3s ease; /* Animação suave ao passar o mouse */
+}
+
+.nav-logo:hover {
+  color: #1e40af; /* Azul mais escuro no hover */
+}
+
+/* Links do menu */
+.nav-links {
+  display: flex; /* Layout flexível */
+  gap: 1rem; /* Espaçamento entre os links */
+  align-items: center; /* Alinha os itens verticalmente */
+}
+
+/* Estilo para cada link */
+.nav-link {
+  color: #eff0f3; /* Azul padrão */
+  text-decoration: none; /* Remove o sublinhado */
+  font-weight: 500; /* Peso intermediário */
+  transition: color 0.3s ease; /* Animação suave ao passar o mouse */
+}
+
+.nav-link:hover {
+  color: #1e40af; /* Azul mais escuro no hover */
+  text-decoration: none; /* Adiciona sublinhado no hover */
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column; /* Empilha os itens no menu */
+    padding: 0 1rem; /* Adiciona espaçamento interno lateral */
+  }
+
+  .nav-links {
+    gap: 0.5rem; /* Reduz o espaçamento entre links */
+  }
 }

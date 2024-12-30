@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,39 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* Menu de Navegação */}
+        <nav className="bg-gray-100 dark:bg-gray-800 main-nav">
+          <div className="nav-container">
+            <Link href="/" className="nav-logo">
+              Sergio Rezende
+            </Link>
+            <div className="nav-links">
+              <Link href="/" className="nav-link">
+                Home
+              </Link>
+              <Link href="/about" className="nav-link">
+                About
+              </Link>
+              <Link href="/contact" className="nav-link">
+                Contact
+              </Link>
+            </div>
+          </div>
+        </nav>
+
+        {/* Conteúdo Principal */}
+        <main className="container mx-auto p-4 flex justify-center items-center min-h-screen">
+          {children}
+        </main>
+
+        {/* Rodapé */}
+        <footer className="bg-gray-100 dark:bg-gray-800 p-4 text-center fixed bottom-0 w-full">
+          <p className="text-sm text-gray-1000">
+            © {new Date().getFullYear()} Sergio Rezende. Todos os direitos
+            reservados.
+          </p>
+        </footer>
+
       </body>
     </html>
   );
